@@ -26,10 +26,9 @@ class ChatScreen extends StatefulWidget {
 }
 
 class ChatScreenState extends State<ChatScreen> {
-
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,18 +45,18 @@ class ChatScreenState extends State<ChatScreen> {
               itemCount: _messages.length,
             ),
           ),
-          Divider(height: 1.0,),
+          Divider(
+            height: 1.0,
+          ),
           Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor
-            ),
+            decoration: BoxDecoration(color: Theme.of(context).cardColor),
             child: _buildTextComposer(),
           )
         ],
       ),
     );
   }
-  
+
   Widget _buildTextComposer() {
     return IconTheme(
       data: IconThemeData(color: Theme.of(context).accentColor),
@@ -69,9 +68,8 @@ class ChatScreenState extends State<ChatScreen> {
                 child: TextField(
                   controller: _textController,
                   onSubmitted: _handleSubmitted,
-                  decoration: InputDecoration.collapsed(
-                      hintText: "Send a message"
-                  ),
+                  decoration:
+                      InputDecoration.collapsed(hintText: "Send a message"),
                 ),
               ),
               Container(
@@ -82,8 +80,7 @@ class ChatScreenState extends State<ChatScreen> {
                 ),
               )
             ],
-          )
-      ),
+          )),
     );
   }
 
@@ -112,12 +109,17 @@ class ChatMessage extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: const EdgeInsets.only(right: 16.0),
-            child: CircleAvatar(child: Text(_name[0]),),
+            child: CircleAvatar(
+              child: Text(_name[0]),
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(_name, style: Theme.of(context).textTheme.subhead,),
+              Text(
+                _name,
+                style: Theme.of(context).textTheme.subhead,
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 5.0),
                 child: Text(text),
