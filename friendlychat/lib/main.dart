@@ -98,6 +98,13 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     });
     message.animationController.forward();
   }
+
+  @override
+  void dispose() {
+    for (ChatMessage message in _messages)
+      message.animationController.dispose();
+    super.dispose();
+  }
 }
 
 class ChatMessage extends StatelessWidget {
