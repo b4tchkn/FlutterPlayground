@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
         create: (context) => CounterStore(),
-        child: MyHomePage(),
+        child: MyHomePage(
+          a: "Gotties Sample App",
+        ),
       ),
     );
   }
