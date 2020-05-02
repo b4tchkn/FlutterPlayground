@@ -25,20 +25,22 @@ class ArticleDetailPage extends StatelessWidget {
           backgroundColor: Colors.blue,
           title: Text('ArticleDetilPage'),
         ),
-        body: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: MovieContainer(
-                beforeImageURL: _article.beforeImageURL,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: MovieContainer(
+                  beforeImageURL: _article.beforeImageURL,
+                ),
               ),
-            ),
-            MainDetailContainer(
-              article: _article,
-            )
-          ],
+              MainDetailContainer(
+                article: _article,
+              )
+            ],
+          ),
         ));
   }
 }
