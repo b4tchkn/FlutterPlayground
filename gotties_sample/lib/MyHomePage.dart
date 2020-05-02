@@ -27,7 +27,9 @@ class MyHomePage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    onPressed: onClickNext,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/article_detail");
+                    },
                   )
                 ],
               ),
@@ -40,9 +42,5 @@ class MyHomePage extends StatelessWidget {
             ));
       },
     );
-  }
-
-  void onClickNext() {
-    print("おんぎゃあ");
   }
 }

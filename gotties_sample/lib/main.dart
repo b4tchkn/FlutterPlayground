@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gottiessample/ArticleDetailPage.dart';
 import 'package:gottiessample/store/CounterStore.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: <String, WidgetBuilder>{
+        '/article_detail': (_) => ArticleDetailPage()
+      },
       home: ChangeNotifierProvider(
         create: (context) => CounterStore(),
         child: MyHomePage(
