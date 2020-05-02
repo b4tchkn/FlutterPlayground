@@ -12,9 +12,26 @@ class MyHomePage extends StatelessWidget {
       builder: (context, counterStore, _) {
         return Scaffold(
             appBar: AppBar(
+              backgroundColor: Colors.pink,
               title: Text(a),
             ),
-            body: Center(child: Text('${counterStore.count}')),
+            body: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('${counterStore.count}'),
+                  RaisedButton(
+                    child: Text('Next Screen'),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    onPressed: onClickNext,
+                  )
+                ],
+              ),
+            ),
             floatingActionButton: FloatingActionButton.extended(
               label: Text('Count'),
               icon: Icon(Icons.add),
@@ -23,5 +40,9 @@ class MyHomePage extends StatelessWidget {
             ));
       },
     );
+  }
+
+  void onClickNext() {
+    print("おんぎゃあ");
   }
 }
