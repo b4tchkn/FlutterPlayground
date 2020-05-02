@@ -9,7 +9,7 @@ class MovieContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     // what's loadingBuilder
     // https://api.flutter.dev/flutter/widgets/Image/loadingBuilder.html
-    return Image.network(beforeImageURL, loadingBuilder:
+    return Image.network(beforeImageURL, height: 400.0, loadingBuilder:
         (BuildContext context, Widget child, ImageChunkEvent loadingProgress) {
       if (loadingProgress == null) return child;
       return Center(

@@ -30,8 +30,10 @@ class ArticleDetailPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            MovieContainer(
-              beforeImageURL: _article.beforeImageURL,
+            Center(
+              child: MovieContainer(
+                beforeImageURL: _article.beforeImageURL,
+              ),
             ),
             MainDetailContainer(
               article: _article,
