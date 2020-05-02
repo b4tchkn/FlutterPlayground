@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gottiessample/ArticleDetailPage.dart';
+import 'package:gottiessample/page/ArticleDetailPage.dart';
 import 'package:gottiessample/store/CounterStore.dart';
 import 'package:provider/provider.dart';
 
-import 'MyHomePage.dart';
+import 'page/MyHomePage.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gottiessample/MainDetailContainer.dart';
-import 'package:gottiessample/MovieContainer.dart';
+import 'package:gottiessample/widgets/MainDetailContainer.dart';
+import 'package:gottiessample/widgets/MovieContainer.dart';
 
 class ArticleDetailPage extends StatelessWidget {
   @override
