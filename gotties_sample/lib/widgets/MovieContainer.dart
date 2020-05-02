@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MovieContainer extends StatelessWidget {
   final beforeImageURL;
@@ -12,13 +13,18 @@ class MovieContainer extends StatelessWidget {
     return Image.network(beforeImageURL, height: 400.0, loadingBuilder:
         (BuildContext context, Widget child, ImageChunkEvent loadingProgress) {
       if (loadingProgress == null) return child;
-      return Center(
-        child: CircularProgressIndicator(
-          value: loadingProgress.expectedTotalBytes != null
-              ? loadingProgress.cumulativeBytesLoaded /
-                  loadingProgress.expectedTotalBytes
-              : null,
-        ),
+      return Stack(
+        children: <Widget>[
+          Center(child: CircularProgressIndicator()),
+          Center(
+            // https://flutter.dev/docs/cookbook/images/fading-in-images
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: beforeImageURL,
+              fadeInCurve: Curves.easeOut,
+            ),
+          ),
+        ],
       );
     });
   }
