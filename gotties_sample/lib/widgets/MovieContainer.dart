@@ -13,20 +13,18 @@ class MovieContainer extends StatelessWidget {
     return Image.network(beforeImageURL, height: 400.0, loadingBuilder:
         (BuildContext context, Widget child, ImageChunkEvent loadingProgress) {
       if (loadingProgress == null) return child;
-      return Center(
-        child: Stack(
-          children: <Widget>[
-            Center(child: CircularProgressIndicator()),
-            Center(
-              // https://flutter.dev/docs/cookbook/images/fading-in-images
-              child: FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: beforeImageURL,
-                fadeInCurve: Curves.easeOut,
-              ),
+      return Stack(
+        children: <Widget>[
+          Center(child: CircularProgressIndicator()),
+          Center(
+            // https://flutter.dev/docs/cookbook/images/fading-in-images
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: beforeImageURL,
+              fadeInCurve: Curves.easeOut,
             ),
-          ],
-        ),
+          ),
+        ],
       );
     });
   }
