@@ -9,10 +9,9 @@ class MovieContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // what's loadingBuilder
-    // https://api.flutter.dev/flutter/widgets/Image/loadingBuilder.html
     return Center(
       // https://flutter.dev/docs/cookbook/images/fading-in-images
+      // https://pub.dev/packages/cached_network_image#-readme-tab-
       child: CachedNetworkImage(
         placeholder: (context, beforeImageURL) => Center(
           child: const CircularProgressIndicator(

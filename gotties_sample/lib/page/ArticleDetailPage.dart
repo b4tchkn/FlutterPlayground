@@ -5,7 +5,6 @@ import 'package:gottiessample/model/category.dart';
 import 'package:gottiessample/store/ArticleDetailStore.dart';
 import 'package:gottiessample/widgets/MainDetailContainer.dart';
 import 'package:gottiessample/widgets/MovieContainer.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class ArticleDetailPage extends StatelessWidget {

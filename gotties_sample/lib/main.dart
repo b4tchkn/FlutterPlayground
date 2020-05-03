@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gottiessample/model/Article.dart';
-import 'package:gottiessample/model/category.dart';
 import 'package:gottiessample/page/ArticleDetailPage.dart';
 import 'package:gottiessample/store/CounterStore.dart';
 import 'package:provider/provider.dart';
