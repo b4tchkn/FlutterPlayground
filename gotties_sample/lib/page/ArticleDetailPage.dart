@@ -40,6 +40,7 @@ class ArticleDetailPage extends StatelessWidget {
                     beforeImageURL: _article.beforeImageURL,
                   ),
                 ),
+                Divider(),
                 MainDetailContainer(
                   article: _article,
                 )

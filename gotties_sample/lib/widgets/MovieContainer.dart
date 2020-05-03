@@ -19,7 +19,7 @@ class MovieContainer extends StatelessWidget {
           ),
         ),
         imageUrl: beforeImageURL,
-        height: 400,
+        height: 300,
         fadeOutDuration: const Duration(seconds: 1),
         fadeInDuration: const Duration(seconds: 3),
         errorWidget: (context, beforeImageURL, error) => Center(
