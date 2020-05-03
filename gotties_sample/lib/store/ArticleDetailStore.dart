@@ -13,13 +13,13 @@ class ArticleDetailStore with ChangeNotifier {
   }
 
   startCrossFadeImage() {
-    crossFadeTimer = Timer.periodic(Duration(seconds: 6),
-        if (crossFadeState == CrossFadeState.showFirst) {
-      crossFadeState = CrossFadeState.showSecond;
-    } else {
-    crossFadeState = CrossFadeState.showSecond;
-    }
-    notifyListeners();
-    );
+    crossFadeTimer = Timer.periodic(Duration(seconds: 6), (timer) {
+      if (crossFadeState == CrossFadeState.showFirst) {
+        crossFadeState = CrossFadeState.showSecond;
+      } else {
+        crossFadeState = CrossFadeState.showSecond;
+      }
+      notifyListeners();
+    });
   }
 }
