@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gottiessample/model/Article.dart';
 import 'package:gottiessample/model/category.dart';
+import 'package:gottiessample/store/ArticleDetailStore.dart';
 import 'package:gottiessample/widgets/MainDetailContainer.dart';
 import 'package:gottiessample/widgets/MovieContainer.dart';
+import 'package:provider/provider.dart';
 
 class ArticleDetailPage extends StatelessWidget {
   final Article _article = Article(
@@ -20,27 +22,30 @@ class ArticleDetailPage extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text('ArticleDetilPage'),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Center(
-                child: MovieContainer(
-                  beforeImageURL: _article.beforeImageURL,
-                ),
-              ),
-              MainDetailContainer(
-                article: _article,
-              )
-            ],
+    return ChangeNotifierProvider(
+      create: (context) => ArticleDetailStore(),
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.blue,
+            title: Text('ArticleDetilPage'),
           ),
-        ));
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Center(
+                  child: MovieContainer(
+                    beforeImageURL: _article.beforeImageURL,
+                  ),
+                ),
+                MainDetailContainer(
+                  article: _article,
+                )
+              ],
+            ),
+          )),
+    );
   }
 }
