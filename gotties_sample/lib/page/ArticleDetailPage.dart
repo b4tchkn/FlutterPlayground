@@ -5,18 +5,19 @@ import 'package:gottiessample/model/category.dart';
 import 'package:gottiessample/store/ArticleDetailStore.dart';
 import 'package:gottiessample/widgets/MainDetailContainer.dart';
 import 'package:gottiessample/widgets/MovieContainer.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class ArticleDetailPage extends StatelessWidget {
   final Article _article = Article(
     id: '0',
     userID: '0001',
-    title: 'タイトル：100年の時を越えて',
-    body: '内容：暇だから100年振りにお掃除しちゃいました♪♪♪♪',
+    title: '100年の時を越えて',
+    body: '暇だから100年振りにお掃除しちゃいました♪♪♪♪',
     beforeImageURL:
         'https://pbs.twimg.com/profile_images/465752413467451392/J9J8Y8nW.jpeg',
     afterImageURL: 'https://i.ytimg.com/vi/HTwwFk7SOrI/maxresdefault.jpg',
-    category: Category(id: '1', title: 'タグ：押入れ'),
+    category: Category(id: '1', title: '押入れ'),
     createdAt: DateTime.now(),
     updatedAt: DateTime.now(),
   );
