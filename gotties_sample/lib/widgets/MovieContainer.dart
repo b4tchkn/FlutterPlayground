@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 
 class MovieContainer extends StatelessWidget {
   final beforeImageURL;
+
   const MovieContainer({this.beforeImageURL});
 
   @override
@@ -19,8 +20,12 @@ class MovieContainer extends StatelessWidget {
           ),
         ),
         imageUrl: beforeImageURL,
+        height: 400,
         fadeOutDuration: const Duration(seconds: 1),
         fadeInDuration: const Duration(seconds: 3),
+        errorWidget: (context, beforeImageURL, error) => Center(
+          child: const Icon(Icons.error),
+        ),
       ),
     );
   }
