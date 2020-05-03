@@ -4,8 +4,9 @@ import 'package:flutter/widgets.dart';
 
 class MovieContainer extends StatelessWidget {
   final beforeImageURL;
+  final afterImageURL;
 
-  const MovieContainer({this.beforeImageURL});
+  const MovieContainer({this.beforeImageURL, this.afterImageURL});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class MovieContainer extends StatelessWidget {
             backgroundColor: Colors.red,
           ),
         ),
-        imageUrl: beforeImageURL,
+        imageUrl: afterImageURL,
         height: 300,
         fadeOutDuration: const Duration(seconds: 1),
         fadeInDuration: const Duration(seconds: 3),

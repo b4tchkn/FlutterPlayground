@@ -38,6 +38,7 @@ class ArticleDetailPage extends StatelessWidget {
                 Center(
                   child: MovieContainer(
                     beforeImageURL: _article.beforeImageURL,
+                    afterImageURL: _article.afterImageURL,
                   ),
                 ),
                 Divider(),
