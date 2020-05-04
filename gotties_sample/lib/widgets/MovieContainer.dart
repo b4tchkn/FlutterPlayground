@@ -34,7 +34,8 @@ class MovieContainer extends StatelessWidget {
               Opacity(
                 // 0~1: 0だとこいつが完全に透明になる．1だと現れる
                 // https://bukiyo-papa.com/opacity/
-                opacity: 0,
+                opacity:
+                    Provider.of<ArticleDetailStore>(context).playPositionRate,
                 child: CachedNetworkImage(
                   placeholder: (context, beforeImageURL) => Center(
                     child: const CircularProgressIndicator(
@@ -55,21 +56,6 @@ class MovieContainer extends StatelessWidget {
           ),
         ),
       ),
-//      Center(
-//        child: GestureDetector(
-//          onTap: () {
-//            Provider.of<ArticleDetailStore>(context).startCrossFadeImage();
-//          },
-//          child: AnimatedCrossFade(
-//            firstChild: beforeImage,
-//            secondChild: afterImage,
-//            duration: Duration(seconds: 5),
-//            crossFadeState:
-//                Provider.of<ArticleDetailStore>(context).crossFadeState,
-//          ),
-//        ),
-//      ),
-//      Text(Provider.of<ArticleDetailStore>(context).isPlaying.toString()),
     ]);
   }
 }

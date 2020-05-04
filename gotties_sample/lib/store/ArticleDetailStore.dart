@@ -5,7 +5,11 @@ import 'package:intl/intl.dart';
 
 class ArticleDetailStore with ChangeNotifier {
   bool isPlaying = false;
+  int playPosition = 0;
+  int musicLength = 0;
+  double playPositionRate = 0.0;
 
+  // about audioplayers: https://pub.dev/packages/audioplayers
   AudioPlayer _advancedPlayer = AudioPlayer();
   AudioCache _audioCache;
 
@@ -25,9 +29,19 @@ class ArticleDetailStore with ChangeNotifier {
       isPlaying = false;
     } else {
       print("START");
-      _audioCache.play('takumi.mp3');
+      _audioCache.play('takumi_short.mp3');
       isPlaying = true;
     }
     notifyListeners();
+
+    _advancedPlayer.onDurationChanged.listen((Duration d) {
+      musicLength = d.inMilliseconds;
+    });
+
+    _advancedPlayer.onAudioPositionChanged.listen((Duration d) {
+      playPosition = d.inMilliseconds;
+      playPositionRate = playPosition / musicLength;
+      notifyListeners();
+    });
   }
 }
