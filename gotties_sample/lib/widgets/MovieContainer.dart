@@ -28,6 +28,12 @@ class MovieContainer extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               CachedNetworkImage(
+                placeholder: (context, beforeImageURL) => Center(
+                  child: const CircularProgressIndicator(
+                    backgroundColor: Colors.red,
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                  ),
+                ),
                 imageUrl: beforeImageURL,
                 height: 300,
               ),
@@ -37,12 +43,6 @@ class MovieContainer extends StatelessWidget {
                 opacity:
                     Provider.of<ArticleDetailStore>(context).playPositionRate,
                 child: CachedNetworkImage(
-                  placeholder: (context, beforeImageURL) => Center(
-                    child: const CircularProgressIndicator(
-                      backgroundColor: Colors.red,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-                    ),
-                  ),
                   imageUrl: afterImageURL,
                   height: 300,
                   fadeOutDuration: const Duration(seconds: 1),

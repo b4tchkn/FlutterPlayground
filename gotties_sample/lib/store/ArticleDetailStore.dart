@@ -5,8 +5,8 @@ import 'package:intl/intl.dart';
 
 class ArticleDetailStore with ChangeNotifier {
   bool isPlaying = false;
-  int playPosition = 0;
-  int musicLength = 0;
+  int _playPosition = 0;
+  int _musicLength = 0;
   double playPositionRate = 0.0;
 
   // about audioplayers: https://pub.dev/packages/audioplayers
@@ -35,12 +35,12 @@ class ArticleDetailStore with ChangeNotifier {
     notifyListeners();
 
     _advancedPlayer.onDurationChanged.listen((Duration d) {
-      musicLength = d.inMilliseconds;
+      _musicLength = d.inMilliseconds;
     });
 
     _advancedPlayer.onAudioPositionChanged.listen((Duration d) {
-      playPosition = d.inMilliseconds;
-      playPositionRate = playPosition / musicLength;
+      _playPosition = d.inMilliseconds;
+      playPositionRate = _playPosition / _musicLength;
       notifyListeners();
     });
   }
