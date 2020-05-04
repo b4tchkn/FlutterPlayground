@@ -12,11 +12,6 @@ class MovieContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final beforeImage = Image.network(
-      beforeImageURL,
-      height: 300.0,
-    );
-    final afterImage = Image.network(afterImageURL, height: 300.0);
     return Column(children: <Widget>[
       GestureDetector(
         onTap: () {
