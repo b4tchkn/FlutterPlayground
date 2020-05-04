@@ -27,6 +27,7 @@ class MovieContainer extends StatelessWidget {
             ),
             Opacity(
               // 0~1: 0だとこいつが完全に透明になる．1だと現れる
+              // https://bukiyo-papa.com/opacity/
               opacity: 0,
               child: CachedNetworkImage(
                 placeholder: (context, beforeImageURL) => Center(
