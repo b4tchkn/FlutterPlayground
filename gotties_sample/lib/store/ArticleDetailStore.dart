@@ -29,7 +29,7 @@ class ArticleDetailStore with ChangeNotifier {
       isPlaying = false;
     } else {
       print("START");
-      _audioCache.play('takumi_short.mp3');
+      _audioCache.loop('takumi_short.mp3');
       isPlaying = true;
     }
     notifyListeners();
