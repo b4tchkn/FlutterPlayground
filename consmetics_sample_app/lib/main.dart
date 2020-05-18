@@ -1,5 +1,7 @@
+import 'package:consmeticssampleapp/main_store.dart';
 import 'package:consmeticssampleapp/placeholder_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,32 +14,34 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      home: ChangeNotifierProvider<MainStore>(
+        child: Main(),
+        create: (context) => MainStore(),
+      ),
     );
   }
 }
 
-class Home extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  int _currentIndex = 0;
+class Main extends StatelessWidget {
   final List<Widget> _children = [
     PlaceholderWidget(Colors.white),
     PlaceholderWidget(Colors.deepOrange),
   ];
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MainStore>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('My Flutter App'),
       ),
-      body: _children[_currentIndex],
+      body: _children[provider.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
-        currentIndex: _currentIndex,
+        onTap: (index) {
+          provider.currentIndex = index;
+          debugPrint("よばれた");
+        },
+        currentIndex: provider.currentIndex,
+        fixedColor: Colors.green,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -50,11 +54,5 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
-  }
-
-  void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
   }
 }
