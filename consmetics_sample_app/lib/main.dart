@@ -1,3 +1,8 @@
+import 'package:consmeticssampleapp/pages/bag_page.dart';
+import 'package:consmeticssampleapp/pages/favorite_page.dart';
+import 'package:consmeticssampleapp/pages/home_page.dart';
+import 'package:consmeticssampleapp/pages/profile_page.dart';
+import 'package:consmeticssampleapp/pages/search_page.dart';
 import 'package:consmeticssampleapp/placeholder_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+//      theme: ThemeData(
+//        primarySwatch: Colors.blue,
+//        visualDensity: VisualDensity.adaptivePlatformDensity,
+//      ),
       home: Home(),
     );
   }
@@ -25,8 +30,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
+    HomePage(Colors.green),
+    SearchPage(Colors.blue),
+    BagPage(Colors.red),
+    FavoritePage(Colors.pink),
+    ProfilePage(Colors.purple)
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,16 +44,31 @@ class _HomeState extends State<Home> {
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.black,
+        unselectedItemColor: Colors.black,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
+        type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home'),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            title: Text(''),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text('Profile'),
+            title: Text(''),
           ),
         ],
       ),
