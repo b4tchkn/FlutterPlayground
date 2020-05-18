@@ -1,6 +1,6 @@
 import 'package:consmeticssampleapp/pages/bag_page.dart';
 import 'package:consmeticssampleapp/pages/favorite_page.dart';
-import 'package:consmeticssampleapp/pages/home_page.dart';
+import 'package:consmeticssampleapp/pages/home/home_page.dart';
 import 'package:consmeticssampleapp/pages/profile_page.dart';
 import 'package:consmeticssampleapp/pages/search_page.dart';
 import 'package:consmeticssampleapp/placeholder_widget.dart';
@@ -39,13 +39,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Flutter App'),
-      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        unselectedItemColor: Colors.blueGrey,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.shifting,
