@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
               child: HomeHeader(),
             ),
             SizedBox(
-              height: 300,
+              height: 250,
               child: Container(
                 margin: EdgeInsets.only(
                   right: 20,

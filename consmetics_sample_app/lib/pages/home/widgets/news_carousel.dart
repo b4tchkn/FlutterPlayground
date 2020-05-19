@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class NewsCarousel extends StatelessWidget {
   final List<News> newsList = [
     News(imageUrl: "", title: "This is Title", isNew: true, tag: ""),
+    News(imageUrl: "", title: "This is Title", isNew: true, tag: ""),
   ];
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class NewsCarousel extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return SizedBox(
-          width: 300,
+          width: 250,
           child: NewsItem(newsList[index]),
         );
       },
