@@ -21,11 +21,4 @@ class NewsCarousel extends StatelessWidget {
       itemCount: newsList.length,
     );
   }
-
-  Widget _separatorItem() {
-    return Container(
-      width: 10,
-      color: Colors.blue,
-    );
-  }
 }
