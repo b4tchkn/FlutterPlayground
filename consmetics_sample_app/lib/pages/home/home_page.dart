@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final newsList = Provider.of<HomeStore>(context).news;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

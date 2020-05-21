@@ -1,16 +1,19 @@
+import 'package:consmeticssampleapp/models/repository_impl.dart';
+import 'package:consmeticssampleapp/models/stores/home_store.dart';
 import 'package:consmeticssampleapp/pages/bag_page.dart';
 import 'package:consmeticssampleapp/pages/favorite_page.dart';
 import 'package:consmeticssampleapp/pages/home/home_page.dart';
 import 'package:consmeticssampleapp/pages/profile_page.dart';
 import 'package:consmeticssampleapp/pages/search_page.dart';
-import 'package:consmeticssampleapp/placeholder_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _repository = RepositoryImpl();
     return MaterialApp(
       title: 'Flutter Demo',
 //      theme: ThemeData(
@@ -18,7 +21,14 @@ class MyApp extends StatelessWidget {
 //        visualDensity: VisualDensity.adaptivePlatformDensity,
 //      ),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => HomeStore(_repository),
+          ),
+        ],
+        child: Home(),
+      ),
     );
   }
 }
