@@ -1,3 +1,4 @@
+import 'package:consmeticssampleapp/util/widgets/shimmer_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,10 +10,25 @@ class NewsPlaceholderItem extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      child: Column(
-        children: <Widget>[
-          Text('This is Placeholder'),
-        ],
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          children: <Widget>[
+            ShimmerContainer(
+              width: 250,
+              height: 150,
+              radius: 5,
+            ),
+            Container(
+              height: 5,
+            ),
+            ShimmerContainer(
+              width: 250,
+              height: 55,
+              radius: 5,
+            )
+          ],
+        ),
       ),
     );
   }
