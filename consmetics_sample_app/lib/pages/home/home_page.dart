@@ -12,38 +12,30 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeStore>(
-      builder: (context, store, child) {
-        return Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                TopImage(
-                    'https://pmcspy.files.wordpress.com/2017/10/reddit-beauty.jpg?w=958&h=599&crop=1'),
-                Container(
-                  margin: EdgeInsets.all(25),
-                  child: HomeHeader(),
-                ),
-                SizedBox(
-                  height: 250,
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      right: 20,
-                      left: 20,
-                    ),
-                    child: NewsCarousel(),
-                  ),
-                ),
-                FlatButton(
-                  child: Text("aaaaa"),
-                  onPressed: () async => store.
-                )
-              ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            TopImage(
+                'https://pmcspy.files.wordpress.com/2017/10/reddit-beauty.jpg?w=958&h=599&crop=1'),
+            Container(
+              margin: EdgeInsets.all(25),
+              child: HomeHeader(),
             ),
-          ),
-        );
-      },
+            SizedBox(
+              height: 250,
+              child: Container(
+                margin: EdgeInsets.only(
+                  right: 20,
+                  left: 20,
+                ),
+                child: NewsCarousel(),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
