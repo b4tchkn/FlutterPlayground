@@ -26,7 +26,35 @@ class NewsItem extends StatelessWidget {
                     topRight: Radius.circular(10),
                   )),
               width: cardSize,
-              height: 200,
+              height: 170,
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  news.title,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                right: 10,
+                left: 10,
+              ),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  news.tag,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(color: Colors.blueGrey),
+                ),
+              ),
             ),
           ],
         ),
