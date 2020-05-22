@@ -15,19 +15,46 @@ class NewsItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(news.imageUrl),
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
+            Expanded(
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(news.imageUrl),
+                      ),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                      ),
+                    ),
+                    width: cardSize,
+                    height: 170,
+                  ),
+                  if (news.isNew == true)
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        height: 20,
+                        width: 70,
+                        margin: EdgeInsets.only(left: 10, bottom: 25),
+                        decoration: BoxDecoration(
+                          color: Color.fromRGBO(40, 42, 40, 1),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'New',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                ],
               ),
-              width: cardSize,
-              height: 170,
             ),
             Padding(
               padding: EdgeInsets.all(10),
