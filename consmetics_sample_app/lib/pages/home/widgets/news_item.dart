@@ -38,7 +38,7 @@ class NewsItem extends StatelessWidget {
                       child: Container(
                         height: 20,
                         width: 70,
-                        margin: EdgeInsets.only(left: 10, bottom: 25),
+                        margin: EdgeInsets.only(left: 10, bottom: 20),
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(40, 42, 40, 1),
                           borderRadius: BorderRadius.circular(10),
@@ -74,6 +74,7 @@ class NewsItem extends StatelessWidget {
               padding: EdgeInsets.only(
                 right: 10,
                 left: 10,
+                bottom: 10,
               ),
               child: Align(
                 alignment: Alignment.topLeft,
