@@ -1,4 +1,5 @@
 import 'package:consmeticssampleapp/models/stores/home_store.dart';
+import 'package:consmeticssampleapp/pages/home/widgets/bottom_content.dart';
 import 'package:consmeticssampleapp/pages/home/widgets/home_header.dart';
 import 'package:consmeticssampleapp/pages/home/widgets/news_carousel.dart';
 import 'package:consmeticssampleapp/pages/home/widgets/top_image.dart';
@@ -36,6 +37,7 @@ class HomePage extends StatelessWidget {
                 child: NewsCarousel(),
               ),
             ),
+            Padding(padding: EdgeInsets.all(20), child: BottomContent()),
           ],
         ),
       ),

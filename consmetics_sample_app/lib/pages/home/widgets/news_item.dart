@@ -17,14 +17,15 @@ class NewsItem extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(news.imageUrl),
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                  )),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(news.imageUrl),
+                ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
               width: cardSize,
               height: 170,
             ),
