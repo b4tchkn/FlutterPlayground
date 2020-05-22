@@ -12,12 +12,9 @@ class NewsCarousel extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
-        return SizedBox(
-          width: 250,
-          child: _newsListSize == 0
-              ? NewsPlaceholderItem()
-              : NewsItem(Provider.of<HomeStore>(context).news[index]),
-        );
+        return _newsListSize == 0
+            ? NewsPlaceholderItem()
+            : NewsItem(Provider.of<HomeStore>(context).news[index]);
       },
       itemCount:
           _newsListSize == 0 ? 5 : Provider.of<HomeStore>(context).news.length,
