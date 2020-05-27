@@ -32,7 +32,7 @@ class MusicListPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black,
         title: Text('Music List'),
       ),
       body: ListView.builder(
