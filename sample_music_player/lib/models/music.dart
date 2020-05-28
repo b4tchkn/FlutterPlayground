@@ -15,6 +15,12 @@ class Music {
     );
   }
 
+  static String convertMusicLength(int musicLength) {
+    final int min = musicLength ~/ 60;
+    final int sec = musicLength % 60;
+    return "$min:$sec";
+  }
+
   final String thumbNail;
   final String title;
   final String artist;

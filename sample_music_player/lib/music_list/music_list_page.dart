@@ -30,7 +30,7 @@ class MusicListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff323232),
+      backgroundColor: Color(0xFF292D32),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return MusicListItem(musicList[index]);

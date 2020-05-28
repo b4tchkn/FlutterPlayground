@@ -11,7 +11,6 @@ class MusicListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-//      margin: EdgeInsets.all(10),
       padding: EdgeInsets.only(right: 10, left: 10),
       margin: EdgeInsets.only(top: 20),
       child: Row(
@@ -20,28 +19,30 @@ class MusicListItem extends StatelessWidget {
             width: 100,
             height: 100,
             child: Container(
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.all(12),
               child: CircleImage(
                 imageUrl: music.thumbNail,
               ),
             ),
           ),
           Container(
-            width: 40,
+            width: 10,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                music.title,
-                style: TextStyle(
-                  color: Colors.white,
+              Container(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Text(
+                  music.title,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
                 ),
               ),
               Text(
-                music.artist,
+                "${music.artist}・${Music.convertMusicLength(music.musicLength)}",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.grey,
                 ),
               ),
             ],
