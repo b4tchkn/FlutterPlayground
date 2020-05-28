@@ -9,45 +9,52 @@ class MusicListItem extends StatelessWidget {
   final Music music;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      padding: EdgeInsets.only(right: 10, left: 10),
-      margin: EdgeInsets.only(top: 20),
-      child: Row(
-        children: [
-          NeumorphismWidget(
-            width: 100,
-            height: 100,
-            child: Container(
-              padding: EdgeInsets.all(12),
-              child: CircleImage(
-                imageUrl: music.thumbNail,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed('/musicPlay', arguments: music);
+//        final snackBar = SnackBar(content: Text(music.title));
+//        Scaffold.of(context).showSnackBar(snackBar);
+      },
+      child: Container(
+        height: 100,
+        padding: EdgeInsets.only(right: 10, left: 10),
+        margin: EdgeInsets.only(top: 20),
+        child: Row(
+          children: [
+            NeumorphismWidget(
+              width: 100,
+              height: 100,
+              child: Container(
+                padding: EdgeInsets.all(12),
+                child: CircleImage(
+                  imageUrl: music.thumbNail,
+                ),
               ),
             ),
-          ),
-          Container(
-            width: 10,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Text(
-                  music.title,
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+            Container(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    music.title,
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
                 ),
-              ),
-              Text(
-                "${music.artist}・${Music.convertMusicLength(music.musicLength)}",
-                style: TextStyle(
-                  color: Colors.grey,
+                Text(
+                  "${music.artist}・${Music.convertMusicLength(music.musicLength)}",
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
