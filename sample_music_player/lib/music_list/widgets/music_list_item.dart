@@ -16,7 +16,7 @@ class MusicListItem extends StatelessWidget {
       margin: EdgeInsets.only(top: 20),
       child: Row(
         children: [
-          NeumorphismWdget(
+          NeumorphismWidget(
             width: 100,
             height: 100,
             child: Container(

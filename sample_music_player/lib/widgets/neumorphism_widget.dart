@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NeumorphismWdget extends StatelessWidget {
-  const NeumorphismWdget({
+class NeumorphismWidget extends StatelessWidget {
+  const NeumorphismWidget({
     this.width = 100,
     this.height = 100,
     @required this.child,
