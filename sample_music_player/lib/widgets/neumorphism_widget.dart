@@ -7,12 +7,15 @@ class NeumorphismWidget extends StatelessWidget {
     this.height = 100,
     @required this.child,
     this.radius = 50,
+    this.color,
+//    this.color = Color(0xFF292D32),
   });
 
   final double width;
   final double height;
   final Widget child;
   final double radius;
+  final color;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class NeumorphismWidget extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: Color(0xFF292D32),
+        color: color,
         borderRadius: BorderRadius.all(
           Radius.circular(radius),
         ),

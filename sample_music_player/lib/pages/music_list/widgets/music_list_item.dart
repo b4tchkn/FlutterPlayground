@@ -24,6 +24,7 @@ class MusicListItem extends StatelessWidget {
             NeumorphismWidget(
               width: 100,
               height: 100,
+              color: Color(0xFF292D32),
               child: Container(
                 padding: EdgeInsets.all(12),
                 child: CircleImage(

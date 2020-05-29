@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:samplemusicplayer/models/music.dart';
-import 'package:samplemusicplayer/music_list/widgets/music_list_item.dart';
+import 'package:samplemusicplayer/pages/music_list/widgets/music_list_item.dart';
 
 class MusicListPage extends StatelessWidget {
   final musicList = [

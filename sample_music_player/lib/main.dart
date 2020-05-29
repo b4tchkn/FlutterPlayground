@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:samplemusicplayer/models/music.dart';
-import 'package:samplemusicplayer/music_list/music_list_page.dart';
-import 'package:samplemusicplayer/music_play_page.dart';
+import 'package:samplemusicplayer/pages/music_play/music_play_page.dart';
+import 'package:samplemusicplayer/pages/music_list/music_list_page.dart';
 
 void main() => runApp(MyApp());
 
