@@ -17,7 +17,7 @@ class GetSampleUseCase extends UseCase<Unit, Future<SampleModel>> {
 
   @override
   Future<SampleModel> call(Unit param) async {
-    Future.delayed(const Duration(milliseconds: 300));
+    await Future.delayed(const Duration(milliseconds: 300), () {});
     return _sampleDataSource.getSample();
   }
 }
