@@ -1,14 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'article.freezed.dart';
+part 'sample.freezed.dart';
 
 @freezed
-class Article with _$Article {
-  const factory Article({
+class Sample with _$Sample {
+  const factory Sample({
     /// タイトル
     required String title,
 
     /// 詳細
     required String description,
-  }) = _Article;
+  }) = _Sample;
 }
