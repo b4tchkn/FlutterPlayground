@@ -4,10 +4,10 @@ import 'package:architecture_sample/model/sample.dart';
 import 'package:architecture_sample/util/unit.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final getSampleUseCaseProvider = Provider(
+final getSampleUseCaseProvider = FutureProvider(
   (ref) => GetSampleUseCase(
     ref.watch(sampleDataSourceProvider),
-  ),
+  ).call(unit),
 );
 
 class GetSampleUseCase extends UseCase<Unit, Future<SampleModel>> {
@@ -17,7 +17,7 @@ class GetSampleUseCase extends UseCase<Unit, Future<SampleModel>> {
 
   @override
   Future<SampleModel> call(Unit param) async {
-    await Future.delayed(const Duration(milliseconds: 300), () {});
+    await Future.delayed(const Duration(milliseconds: 3000), () {});
     return _sampleDataSource.getSample();
   }
 }
