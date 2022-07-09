@@ -3,12 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'sample.freezed.dart';
 
 @freezed
-class Sample with _$Sample {
-  const factory Sample({
+class SampleModel with _$SampleModel {
+  const factory SampleModel({
     /// タイトル
     required String title,
 
     /// 詳細
     required String description,
-  }) = _Sample;
+  }) = _SampleModel;
 }
