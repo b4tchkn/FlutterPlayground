@@ -26,4 +26,8 @@ class SampleState extends AtomState<SampleModel> {
       loading: () => state = const AsyncEntity(fetch: FetchStatus.loading),
     );
   }
+
+  Future<void> refresh(WidgetRef ref) async {
+    ref.refresh(getSampleUseCaseProvider);
+  }
 }

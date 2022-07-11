@@ -17,15 +17,22 @@ class HomePage extends HookConsumerWidget {
       appBar: AppBar(
         title: const Text('サンプル'),
       ),
-      body: DefaultContainer(
-        entities: [sample],
-        builder: (_) => Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(sample.entity!.title),
-              Text(sample.entity!.description),
-            ],
+      body: RefreshIndicator(
+        onRefresh: () => ref.read(sampleStateProvider.notifier).refresh(ref),
+        child: DefaultContainer(
+          entities: [sample],
+          builder: (_) => SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Container(
+              color: Colors.green,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(sample.entity!.title),
+                  Text(sample.entity!.description),
+                ],
+              ),
+            ),
           ),
         ),
       ),
