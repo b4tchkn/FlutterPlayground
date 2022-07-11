@@ -1,9 +1,11 @@
+import 'package:architecture_sample/model/async_entity.dart';
 import 'package:architecture_sample/state/sample.dart';
+import 'package:architecture_sample/ui/default_container.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class MyHomePage extends HookConsumerWidget {
-  const MyHomePage({
+class HomePage extends HookConsumerWidget {
+  const HomePage({
     super.key,
   });
 
@@ -12,13 +14,20 @@ class MyHomePage extends HookConsumerWidget {
     final sample = ref.watch(sampleStateProvider);
 
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: sample.entity == null
-            ? const CircularProgressIndicator()
-            : Text(
-                sample.entity!.title,
-              ),
+      appBar: AppBar(
+        title: const Text('サンプル'),
+      ),
+      body: DefaultContainer(
+        entities: [sample],
+        builder: (_) => Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(sample.entity!.title),
+              Text(sample.entity!.description),
+            ],
+          ),
+        ),
       ),
     );
   }
