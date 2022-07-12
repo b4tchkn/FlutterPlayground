@@ -21,18 +21,27 @@ class HomePage extends HookConsumerWidget {
         onRefresh: () => ref.read(sampleStateProvider.notifier).refresh(ref),
         child: DefaultContainer(
           entities: [sample],
-          builder: (_) => SingleChildScrollView(
+          builder: (_) => CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
-            child: Container(
-              color: Colors.green,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(sample.entity!.title),
-                  Text(sample.entity!.description),
-                ],
-              ),
-            ),
+            slivers: [
+              SliverFillRemaining(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 24.0),
+                  child: Container(
+                    color: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 24.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(sample.entity!.title),
+                        Text(sample.entity!.description),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       ),
