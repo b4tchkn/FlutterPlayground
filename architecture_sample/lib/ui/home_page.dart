@@ -1,4 +1,3 @@
-import 'package:architecture_sample/model/async_entity.dart';
 import 'package:architecture_sample/state/sample.dart';
 import 'package:architecture_sample/ui/default_container.dart';
 import 'package:flutter/material.dart';
@@ -11,16 +10,16 @@ class HomePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final sample = ref.watch(sampleStateProvider);
+    final sample = ref.watch(sampleAtomFutureProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('サンプル'),
       ),
       body: RefreshIndicator(
-        onRefresh: () => ref.read(sampleStateProvider.notifier).refresh(ref),
+        onRefresh: () async => ref.refresh(sampleAtomFutureProvider),
         child: DefaultContainer(
-          entities: [sample],
+          asyncValues: [sample],
           builder: (_) => CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
@@ -34,8 +33,8 @@ class HomePage extends HookConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(sample.entity!.title),
-                        Text(sample.entity!.description),
+                        Text(sample.value!.title),
+                        Text(sample.value!.description),
                       ],
                     ),
                   ),
