@@ -10,4 +10,9 @@ class SampleDataSource {
         title: 'サンプルタイトル',
         description: 'サンプルディスクリプション',
       );
+
+  Future<SampleModel> getSample2() async => const SampleModel(
+        title: 'サンプルタイトル2',
+        description: 'サンプルディスクリプション2',
+      );
 }

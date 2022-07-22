@@ -1,4 +1,5 @@
 import 'package:architecture_sample/state/sample.dart';
+import 'package:architecture_sample/state/sample2.dart';
 import 'package:architecture_sample/ui/default_container.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -11,6 +12,7 @@ class HomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sample = ref.watch(sampleAtomFutureProvider);
+    final sample2 = ref.watch(sample2AtomFutureProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -19,7 +21,7 @@ class HomePage extends HookConsumerWidget {
       body: RefreshIndicator(
         onRefresh: () async => ref.refresh(sampleAtomFutureProvider),
         child: DefaultContainer(
-          asyncValues: [sample],
+          asyncValues: [sample, sample2],
           builder: (_) => CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
@@ -35,6 +37,9 @@ class HomePage extends HookConsumerWidget {
                       children: [
                         Text(sample.value!.title),
                         Text(sample.value!.description),
+                        const Divider(),
+                        Text(sample2.value!.title),
+                        Text(sample2.value!.description),
                       ],
                     ),
                   ),
