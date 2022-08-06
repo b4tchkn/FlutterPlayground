@@ -24,12 +24,6 @@ final agoraControllerProvider = Provider((_) => AgoraController());
 class AgoraController {
   late RtcEngine? engine;
 
-  // how to get: https://console.agora.io/en/project/YXMV0nMtB
-  static const _appId = '235ff31d2a394cdda83264ef9a45293d';
-  static const _token =
-      '006235ff31d2a394cdda83264ef9a45293dIAD4WvoeP3r4nh48ntizJA53OBQnfqvFdqcN6gQEKN85Amg2GWEAAAAAEABUJOp9h3jvYgEAAQCEeO9i';
-  static const _channelName = 'maro';
-
   Future<void> init() async {
     await [Permission.camera, Permission.microphone].request();
 
@@ -65,17 +59,17 @@ class AgoraController {
 
   Future<void> joinChannelAsOwner() => _joinChannel(002);
 
-  Future<void> _joinChannel(int uid) async {
+  Future<void> leaveChannel() async {
     try {
-      await engine?.joinChannel(_token, _channelName, null, uid);
+      await engine?.leaveChannel();
     } catch (e, s) {
       logger.es(e, s);
     }
   }
 
-  Future<void> leaveChannel() async {
+  Future<void> switchCamera() async {
     try {
-      await engine?.leaveChannel();
+      await engine?.switchCamera();
     } catch (e, s) {
       logger.es(e, s);
     }
@@ -89,4 +83,18 @@ class AgoraController {
       logger.es(e, s);
     }
   }
+
+  Future<void> _joinChannel(int uid) async {
+    try {
+      await engine?.joinChannel(_token, channelName, null, uid);
+    } catch (e, s) {
+      logger.es(e, s);
+    }
+  }
 }
+
+// how to get: https://console.agora.io/en/project/YXMV0nMtB
+const _appId = '235ff31d2a394cdda83264ef9a45293d';
+const _token =
+    '006235ff31d2a394cdda83264ef9a45293dIAD4WvoeP3r4nh48ntizJA53OBQnfqvFdqcN6gQEKN85Amg2GWEAAAAAEABUJOp9h3jvYgEAAQCEeO9i';
+const channelName = 'maro';
