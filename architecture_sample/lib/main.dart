@@ -2,8 +2,11 @@ import 'package:architecture_sample/ui/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:logger/logger.dart';
 
 void main() {
+  Logger.level = Level.debug;
+
   runApp(
     const ProviderScope(
       child: MyApp(),
