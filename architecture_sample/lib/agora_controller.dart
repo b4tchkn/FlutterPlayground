@@ -64,9 +64,9 @@ class AgoraController {
 
   Future<void> _joinChannel(int uid) async {
     try {
-      await engine?.joinChannel(_token, 'maro', null, uid);
+      await engine?.joinChannel(_token, _channelName, null, uid);
     } catch (e, s) {
-      logger.e('$e, $s');
+      logger.es(e, s);
     }
   }
 
@@ -74,7 +74,7 @@ class AgoraController {
     try {
       await engine?.leaveChannel();
     } catch (e, s) {
-      logger.e('$e, $s');
+      logger.es(e, s);
     }
   }
 
@@ -83,7 +83,7 @@ class AgoraController {
       await engine?.leaveChannel();
       await engine?.destroy();
     } catch (e, s) {
-      logger.e('$e, $s');
+      logger.es(e, s);
     }
   }
 }
