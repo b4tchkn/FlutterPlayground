@@ -1,5 +1,6 @@
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:architecture_sample/util/log.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 typedef OnJoinChannelSuccess = void Function(
@@ -17,6 +18,8 @@ typedef OnUserOffline = void Function(
   int uid,
   UserOfflineReason reason,
 );
+
+final agoraControllerProvider = Provider((_) => AgoraController());
 
 class AgoraController {
   late RtcEngine? engine;

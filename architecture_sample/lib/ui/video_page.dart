@@ -2,19 +2,17 @@ import 'package:architecture_sample/agora_controller.dart';
 import 'package:architecture_sample/hooks/use_effect_once.dart';
 import 'package:architecture_sample/ui/show_app_snack_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class VideoPage extends HookWidget {
+class VideoPage extends HookConsumerWidget {
   const VideoPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final agoraController = useMemoized(AgoraController.new);
-
-    final topText = useState('初期状態');
+  Widget build(BuildContext context, WidgetRef ref) {
+    final agoraController = ref.watch(agoraControllerProvider);
 
     useEffectOnce(() {
       Future.microtask(() async {
@@ -44,7 +42,6 @@ class VideoPage extends HookWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(topText.value),
           const Gap(16.0),
           OutlinedButton(
             onPressed: agoraController.joinChannelAsNeko,
