@@ -1,5 +1,7 @@
+import 'package:architecture_sample/hooks/use_app_router.dart';
 import 'package:architecture_sample/state/sample.dart';
 import 'package:architecture_sample/state/sample2.dart';
+import 'package:architecture_sample/ui/app_route.dart';
 import 'package:architecture_sample/ui/default_container.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -14,9 +16,16 @@ class HomePage extends HookConsumerWidget {
     final sample = ref.watch(sampleAtomFutureProvider);
     final sample2 = ref.watch(sample2AtomFutureProvider);
 
+    final router = useAppRouter();
     return Scaffold(
       appBar: AppBar(
         title: const Text('サンプル'),
+        actions: [
+          IconButton(
+            onPressed: () => router.push(AppRouteName.video),
+            icon: const Icon(Icons.ac_unit),
+          ),
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: () async => ref.refresh(sampleAtomFutureProvider),

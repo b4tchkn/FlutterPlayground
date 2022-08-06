@@ -10,6 +10,13 @@
             </list>
           </value>
         </entry>
+        <entry key="agora_rtc_engine">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/agora_rtc_engine-5.3.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="analyzer">
           <value>
             <list>
@@ -271,7 +278,7 @@
         <entry key="flutter">
           <value>
             <list>
-              <option value="$USER_HOME$/fvm/versions/3.0.3/packages/flutter/lib" />
+              <option value="$USER_HOME$/fvm/versions/3.0.5/packages/flutter/lib" />
             </list>
           </value>
         </entry>
@@ -306,7 +313,14 @@
         <entry key="flutter_test">
           <value>
             <list>
-              <option value="$USER_HOME$/fvm/versions/3.0.3/packages/flutter_test/lib" />
+              <option value="$USER_HOME$/fvm/versions/3.0.5/packages/flutter_test/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_web_plugins">
+          <value>
+            <list>
+              <option value="$USER_HOME$/fvm/versions/3.0.5/packages/flutter_web_plugins/lib" />
             </list>
           </value>
         </entry>
@@ -337,6 +351,13 @@
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/glob-2.1.0/lib" />
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="go_router">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/go_router-4.2.5/lib" />
             </list>
           </value>
         </entry>
@@ -513,6 +534,41 @@
             </list>
           </value>
         </entry>
+        <entry key="permission_handler">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler-10.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="permission_handler_android">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_android-10.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="permission_handler_apple">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_apple-9.0.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="permission_handler_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_platform_interface-3.7.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="permission_handler_windows">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_windows-0.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="petitparser">
           <value>
             <list>
@@ -524,6 +580,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="plugin_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2/lib" />
             </list>
           </value>
         </entry>
@@ -603,7 +666,7 @@
         <entry key="sky_engine">
           <value>
             <list>
-              <option value="$USER_HOME$/fvm/versions/3.0.3/bin/cache/pkg/sky_engine/lib" />
+              <option value="$USER_HOME$/fvm/versions/3.0.5/bin/cache/pkg/sky_engine/lib" />
             </list>
           </value>
         </entry>
@@ -811,6 +874,7 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-34.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-40.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/agora_rtc_engine-5.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/analyzer-3.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/analyzer-4.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/archive-3.1.11/lib" />
@@ -863,6 +927,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/frontend_server_client-2.1.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/glob-2.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/go_router-4.2.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/graphs-2.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/hooks_riverpod-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/html-0.15.0/lib" />
@@ -892,8 +957,14 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/package_config-2.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path-1.8.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler-10.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_android-10.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_apple-9.0.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_platform_interface-3.7.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/permission_handler_windows-0.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/petitparser-5.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pool-1.5.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pool-1.5.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/process-4.2.4/lib" />
@@ -938,9 +1009,10 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/xml-5.4.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1/lib" />
-      <root url="file://$USER_HOME$/fvm/versions/3.0.3/bin/cache/pkg/sky_engine/lib" />
-      <root url="file://$USER_HOME$/fvm/versions/3.0.3/packages/flutter/lib" />
-      <root url="file://$USER_HOME$/fvm/versions/3.0.3/packages/flutter_test/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/3.0.5/bin/cache/pkg/sky_engine/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/3.0.5/packages/flutter/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/3.0.5/packages/flutter_test/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/3.0.5/packages/flutter_web_plugins/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
